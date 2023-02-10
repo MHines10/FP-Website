@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+.Dark{
+  background: #0C0C1A;
+background: -moz-linear-gradient(top, #0C0C1A 0%, #31316B 100%);
+background: -webkit-linear-gradient(top, #0C0C1A 0%, #31316B 100%);
+background: linear-gradient(to bottom, #0C0C1A 0%, #31316B 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Light{
+  background: #63A2F7;
+background: -moz-linear-gradient(top, #63A2F7 0%, #7575FF 50%, #2D2D61 100%);
+background: -webkit-linear-gradient(top, #63A2F7 0%, #7575FF 50%, #2D2D61 100%);
+background: linear-gradient(to bottom, #63A2F7 0%, #7575FF 50%, #2D2D61 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#heading{
+  margin-left: 30px;
+  font-size: 2rem;
+  margin-bottom: 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.heading{
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.animated-background {
+  width: 100px;
+  height: 100px;
+  animation: background-animation 5s forwards infinite;
 }

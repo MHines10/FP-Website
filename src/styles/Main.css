@@ -1,0 +1,91 @@
+/* Main */
+
+.container{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.container{
+    user-select: none;
+} 
+
+#Male {
+    height: 780px;
+    position: absolute;
+    right: -100px;
+    top: 100px;
+    animation: malechar;
+    animation-duration: 2s;
+}
+
+@keyframes malechar {
+    0%{
+        transform: translateX(1turn);
+        position: absolute;
+        right: -1000px;
+        top: 1px;
+    }
+    100%{
+        position: absolute;
+        right: -100px;
+        top: 100px;
+    }
+}
+
+#Female{
+    height: 650px;
+    position: absolute;
+    right: -100px;
+    top: 100px;
+    animation: femalechar;
+    animation-duration: 2s;
+}
+
+@keyframes femalechar {
+    0%{
+        transform: translateX(1turn);
+        position: absolute;
+        right: -1000px;
+        top: 100px;
+    }
+    100%{
+        position: absolute;
+        right: -100px;
+        top: 100px;
+    }
+}
+
+#Zero-Logo{
+    height: 400px;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    animation: zerologo;
+    animation-duration: 4s;
+}
+
+@keyframes zerologo {
+    0%{
+        transform:rotate(-1turn);
+        position: absolute;
+        left: -1000px;
+        top: 100px;
+    }
+    100%{
+        position: absolute;
+        left: 50px;
+        top: 100px;
+    }
+}
+
+
+
+/* .Bg-Container-dark{
+}
+.Bg-Container-light{
+} */
+
+

@@ -1,8 +1,17 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+body {
+  background: #49499E;
+background: -moz-linear-gradient(top, #49499E 0%, #2E2E64 50%, #0C0C1A 100%);
+background: -webkit-linear-gradient(top, #49499E 0%, #2E2E64 50%, #0C0C1A 100%);
+background: linear-gradient(to bottom, #49499E 0%, #2E2E64 50%, #0C0C1A 100%);
+  color: #fff;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +19,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body::-webkit-scrollbar {
+  width: 0.8em;
+  background: #305EFF;
+background: -moz-radial-gradient(center, #305EFF 0%, #000000 100%);
+background: -webkit-radial-gradient(center, #305EFF 0%, #000000 100%);
+background: radial-gradient(ellipse at center, #305EFF 0%, #000000 100%)
+  /* background-color: #7300ff; */
+}
+ 
+body::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #FF0000;
+background: -moz-radial-gradient(center, #FF0000 0%, #F58B00 100%);
+background: -webkit-radial-gradient(center, #FF0000 0%, #F58B00 100%);
+background: radial-gradient(ellipse at center, #FF0000 0%, #F58B00 100%)
+  /* background-color: #ff0505; */
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: #f5f5f500;
 }

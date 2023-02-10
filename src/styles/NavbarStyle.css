@@ -1,0 +1,144 @@
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .Toggle-Container {
+    background: #ffffffb5;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #ffffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .Toggle-Container-Light {
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #fd0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .Toggle-Switcher {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ffffff;
+    border-radius: 18px;
+    background-color: #f40808;
+    transform: translateX(-9px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Toggle-Switcher-Moved {
+    background: #ff0000;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #000000;
+    border-radius: 18px;
+    background-color: #f4cd08;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(9px);
+    transition: .6s;
+  }
+  
+  form {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 20px;
+  }
+  
+  /* input[type="submit"]:hover {
+    background-color: #fff;
+    color: #333;
+  } */
+  
+
+
+
+/* nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1E1427;
+    width: 98.5vw;
+    height: 8vh;
+    z-index: 999;
+}
+#navBarYShown{
+    position: sticky;
+    top: 0;
+}
+.Container span {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+#LogoName2{
+    color: #EE9B00;
+}
+.Toggle-Container{
+    position: relative;
+    margin-left: 40px;
+    background-color: #ffffff00;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+/* .Toggle-Container-Light{
+    position: relative;
+    margin-left: 40px;
+    background-color:#3a86ff;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+} */
+
+/*.Toggle-Switcher{
+    position: absolute;
+    top: 3.5px;
+    left: 3px;
+    background-color: #1E1427;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    transition: .6s;
+}
+.Toggle-Switcher-Moved{
+    position: absolute;
+    top: 3.5px;
+    left: 42px;
+    background-color: rgb(240, 255, 101);
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    transition: .6s;
+} */

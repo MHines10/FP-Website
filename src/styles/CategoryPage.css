@@ -1,0 +1,60 @@
+h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 32px;
+}
+
+select {
+  
+  width: 25%;
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.game-card {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.game-card h3 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.game-card p {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}

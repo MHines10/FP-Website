@@ -1,0 +1,82 @@
+.log1 {
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    -webkit-box-shadow: 5px 5px 25px 5px #000000; 
+    box-shadow: 5px 5px 25px 5px #000000;
+    background: #574545;
+    background: -moz-linear-gradient(-45deg, #574545 0%, #13067A 50%, #780606 100%);
+    background: -webkit-linear-gradient(-45deg, #574545 0%, #13067A 50%, #780606 100%);
+    background: linear-gradient(135deg, #574545 0%, #13067A 50%, #780606 100%);
+  }
+  
+  .logh1 {
+    margin-bottom: 50px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-float {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .form-con {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.114);
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .usernamelog,
+  .logPassword {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .form-con:focus + .usernamelog,
+  .form-con:valid + .usernamelog {
+    top: -20px;
+    font-size: 14px;
+    color: #16a085;
+  }
+  
+  .checkbox {
+    margin-bottom: 30px;
+  }
+  
+  .btnn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #16a085;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btnn:hover {
+    background-color: #1abc9c;
+  }
+  
+  .copr {
+    margin-top: 30px;
+  }

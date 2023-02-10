@@ -1,0 +1,76 @@
+/* GameData */
+
+
+.Game-Container{
+    position: absolute;
+    left: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+}
+.Background{
+    background: #0C0C1A;
+    background: -moz-linear-gradient(top, #0C0C1A 0%, #3a3a7e 100%);
+    background: -webkit-linear-gradient(top, #0C0C1A 0%, #3a3a7e 100%);
+    background: linear-gradient(to bottom, #0C0C1A 0%, #3a3a7e 100%);
+    width: 100vw;
+    height: 55vh;
+}
+.Background-light{
+    background-color: #0077ff;
+    width: 100vw;
+    height: 55vh;
+}
+.Game-Container img{
+    height: 230px;
+    width: 420px;
+}
+
+.playnow-btn{
+    background: #A40000;
+    background: -moz-linear-gradient(-45deg, #A40000 0%, #FFEE00 100%);
+    background: -webkit-linear-gradient(-45deg, #A40000 0%, #FFEE00 100%);
+    background: linear-gradient(135deg, #A40000 0%, #FFEE00 100%);
+    font-size: 1.6rem;
+    padding: 12px 25px;
+    width: 200px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+#GameTitle{
+    width: 300px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 68px;
+}
+#GameTitlecolor{
+    color: #3a86ff;
+    width: 300px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 68px;
+}
+.Game-Info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#Close{
+    position: relative;
+    left: 320px;
+    top: -10px
+}
+
+#gameDataImg{
+    border: 3px double white;
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 5px 5px #000000; 
+    box-shadow: -10px 10px 20px 10px #000000c8;
+}
