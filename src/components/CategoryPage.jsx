@@ -3,11 +3,18 @@ import axios from 'axios';
 import '../styles/CategoryPage.css'
 
 export default function CategoryPage() {
+  // Initializing states using useState hook
+  
+  // for storing list of games
   const [games, setGames] = useState([]);
+  // for storing selected category
   const [selectedCategory, setSelectedCategory] = useState('shooter');
+  // for storing loading state
   const [loading, setLoading] = useState(false);
 
+  // Function for fetching games based on selected category
   const fetchGames = async (category) => {
+    // setting loading state to true
     setLoading(true);
     const options = {
       method: 'GET',
@@ -19,14 +26,18 @@ export default function CategoryPage() {
       }
     };
     try {
+      // sending GET request using axios module
       const response = await axios.request(options);
+      // setting list of games to state
       setGames(response.data);
+      // setting loading state to false
       setLoading(false);
     } catch (error) {
+       // logging errors to console
       console.error(error);
     }
   }
-
+  // UseEffect hook for calling fetchGames function whenever selected category changes
   useEffect(() => {
     fetchGames(selectedCategory);
   }, [selectedCategory]);
@@ -35,6 +46,7 @@ export default function CategoryPage() {
     <div>
       <h2 >Games List</h2>
       <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+        {/* Dropdown menu for selecting category */}
         <option value="shooter">Shooter</option>
         <option value="role-playing">Role-Playing</option>
         <option value="strategy">Strategy</option>
@@ -48,10 +60,12 @@ export default function CategoryPage() {
         <option value="MMORPG">MMORPG</option>
         <option value="sci-fi">Sci-Fi</option>
       </select>
+      {/* Conditional rendering based on loading state */}
       {loading ? (
         <div>Loading...</div>
       ) : (
         <div className="game-list">
+          {/* Mapping over list of games and rendering a game card for each */}
           {games.map((game) => (
             <div className="game-card" key={game.id}>
               <img src={game.thumbnail} alt={game.title} />

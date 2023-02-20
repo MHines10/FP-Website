@@ -6,56 +6,61 @@ import GameData from "../gamedata/GameData";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 
 export default function GameList() {
-    const API = "https://free-to-play-games-database.p.rapidapi.com/api/games";
-    const [games, setGames] = useState([]);
-    const [slider, setSlider] = useState(false);
-    const [index, setIndex] = useState(0)
-    // eslint-disable-next-line
-    const [toggle, setToggle] = useState(false)
-    const Starting = {
-        Title: '',
-        Thumbnail: '',
-        Genre: '',
-        Release_Date: '',
-        Url: ''
-        }
-    const GameShown = (game) => {
-        dispatch({type: 'Click', payload: game})
-        setToggle(true)
-        console.log(Starting)
-    } 
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case 'Click':
-                return {
-                    Title: Starting.Title = action.payload.title,
-                    Thumbnail: Starting.Thumbnail = action.payload.thumbnail,
-                    Genre: Starting.Genre = action.payload.genre,
-                    Release_Date: Starting.Release_Date = action.payload.release_date,
-                    Url: Starting.Url = action.payload.game_url
-                }
-                default:
-                    return state
-                }
-            }
-             // eslint-disable-next-line
-            const [state, dispatch] = useReducer(reducer, Starting)
-            const {themeSwitch} = useContext(ToggleContainer);
-            
-            const gameListApi = async () => {
-                const data = await axios.get(API, {
-                    headers: {
-        "X-RapidAPI-Key": "b496d3e7camsh49e1517c464e334p1e37eejsn4692002e4c38",
-        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-        }
-    });
-    setGames(data.data);
-  };
-  useEffect(() => {
-    gameListApi();
-  }, []);
+  const API = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+  const [games, setGames] = useState([]);  // State for storing game list
+  const [slider, setSlider] = useState(false);  // State for toggling image slider
+  const [index, setIndex] = useState(0)  // State for storing the index of the current game
+  // eslint-disable-next-line
+  const [toggle, setToggle] = useState(false)  // State for toggling game data component
+  const Starting = {
+      Title: '',
+      Thumbnail: '',
+      Genre: '',
+      Release_Date: '',
+      Url: ''
+      }
+  // Function to show game data and dispatch action to update game data state
+  const GameShown = (game) => {
+      dispatch({type: 'Click', payload: game})
+      setToggle(true)
+      console.log(Starting)
+  } 
+  // Reducer function to update game data state based on the action dispatched
+  const reducer = (state, action) => {
+      switch (action.type) {
+          case 'Click':
+              return {
+                  Title: Starting.Title = action.payload.title,
+                  Thumbnail: Starting.Thumbnail = action.payload.thumbnail,
+                  Genre: Starting.Genre = action.payload.genre,
+                  Release_Date: Starting.Release_Date = action.payload.release_date,
+                  Url: Starting.Url = action.payload.game_url
+              }
+              default:
+                  return state
+              }
+          }
+  // State and dispatch for game data
+  const [state, dispatch] = useReducer(reducer, Starting)
+  const {themeSwitch} = useContext(ToggleContainer);  // Using context to get current theme state
+          
+  // API call to get list of games and set the state with the received data
+  const gameListApi = async () => {
+      const data = await axios.get(API, {
+          headers: {
+  "X-RapidAPI-Key": "b496d3e7camsh49e1517c464e334p1e37eejsn4692002e4c38",
+  "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+  }
+});
+setGames(data.data);
+};
+// Effect hook to make API call on component mount
+useEffect(() => {
+  gameListApi();
+}, []);
 
-  console.log(games);
+console.log(games);
+// Return JSX to display game list and image slider
   return (
     <>
       <div className="gameList-container">
