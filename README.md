@@ -1,7 +1,7 @@
 # ZeroCost Gaming
 ZeroCost Gaming is a web application that allows users to browse and search for free-to-play games and MMO games. It uses the MMO Games and Free-to-Play Games Database API to fetch game information and Flask to create a RESTful API that interacts with a SQLite database to store user information.
 
-GitHub repo for Flask API AND Database https://github.com/MHines10/ZeroCostGaming-Website-API-DB
+GitHub repo for Flask API & Database https://github.com/MHines10/ZeroCostGaming-Website-API-DB
 
 # Technologies Used
 React
