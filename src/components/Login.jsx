@@ -3,51 +3,90 @@ import '../styles/Login.css'
 import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
+  // const navigate = useNavigate();
+  // // Call flashMessage when needed
+  // props.flashMessage();
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   // Get the data from the form
+  //   let username = event.target.username.value;
+  //   let password = event.target.password.value;
+  //   let stringToEncode = `${username}:${password}`;
+
+  //   let myHeaders = new Headers();
+  //   myHeaders.append("Authorization", `Basic ${btoa(stringToEncode)}`);
+  //   myHeaders.append("Content-Type", "application/json");
+
+  //   let response = await fetch(
+  //       "https://responsible-knowledgeable-restaurant.glitch.me/auth/token",
+  //     {
+  //       method: "GET",
+  //       headers: myHeaders,
+  //     }
+  //   );
+
+  //   if (response.ok) {
+  //     let data = await response.json();
+  //     // Get the token and token expiration from the response
+  //     let token = data.token;
+  //     let expiration = data.token_expiration;
+
+  //     // Store the value in local storage on the browser
+  //     localStorage.setItem("token", token);
+  //     localStorage.setItem("tokenExp", expiration);
+
+  //     // flash a success message and redirect back home
+  //     // props.flashMessage("You have successfully logged in", "success");
+  //     props.logUserIn();
+  //     navigate("/home");
+  //   } else {
+  //     // flash a fail message
+  //     props.flashMessage(
+  //       "Your username and/or password are incorrect",
+  //       "danger"
+  //     );
+  //   }
+  // };
+
   const navigate = useNavigate();
-  // Call flashMessage when needed
-  props.flashMessage();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    // Get the data from the form
-    let username = event.target.username.value;
-    let password = event.target.password.value;
-    let stringToEncode = `${username}:${password}`;
+    const handleSubmit = async event => {
+        event.preventDefault();
+        // Get the data from the form
+        let username = event.target.username.value;
+        let password = event.target.password.value;
+        let stringToEncode = `${username}:${password}`
 
-    let myHeaders = new Headers();
-    myHeaders.append("Authorization", `Basic ${btoa(stringToEncode)}`);
-    myHeaders.append("Content-Type", "application/json");
+        let myHeaders = new Headers();
+        myHeaders.append('Authorization', `Basic ${btoa(stringToEncode)}`);
+        myHeaders.append('Content-Type', 'application/json');
 
-    let response = await fetch(
-        "https://responsible-knowledgeable-restaurant.glitch.me/auth/token",
-      {
-        method: "GET",
-        headers: myHeaders,
-      }
-    );
+        let response = await fetch("https://responsible-knowledgeable-restaurant.glitch.me/auth/token", {
+            method: 'POST',    
+            headers: myHeaders
+        })
 
-    if (response.ok) {
-      let data = await response.json();
-      // Get the token and token expiration from the response
-      let token = data.token;
-      let expiration = data.token_expiration;
+        if (response.ok){
+            let data = await response.json();
+            // Get the token and token expiration from the response
+            let token = data.token;
+            let expiration = data.token_expiration;
 
-      // Store the value in local storage on the browser
-      localStorage.setItem("token", token);
-      localStorage.setItem("tokenExp", expiration);
+            // Store the value in local storage on the browser
+            localStorage.setItem('token', token);
+            localStorage.setItem('tokenExp', expiration);
 
-      // flash a success message and redirect back home
-      // props.flashMessage("You have successfully logged in", "success");
-      props.logUserIn();
-      navigate("/home");
-    } else {
-      // flash a fail message
-      props.flashMessage(
-        "Your username and/or password are incorrect",
-        "danger"
-      );
+            // flash a success message and redirect back home
+            props.flashMessage('You have successfully logged in', 'success');
+            props.logUserIn();
+            navigate('/');
+        } else {
+            // flash a fail message
+            props.flashMessage('Your username and/or password are incorrect', 'danger');
+        }
+
     }
-  };
 
   return (
     <>
