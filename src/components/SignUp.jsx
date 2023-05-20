@@ -22,7 +22,7 @@ export default function Signup(props) {
         email: event.target.email.value,
         password,
       });
-      fetch("https://zcgapi.glitch.me/auth/users", {
+      fetch("https://responsible-knowledgeable-restaurant.glitch.me/auth/users", {
         method: "POST",
         headers: myHeaders,
         body: formData,

@@ -15,7 +15,7 @@ export default function UpdateUser({ userId }) {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://zcgapi.glitch.me/auth/users/${userId}`);
+        const response = await axios.get(`https://responsible-knowledgeable-restaurant.glitch.me/auth/users/${userId}`);
         setUser(response.data);
         setUsername(response.data.username);
         setPassword(response.data.password);

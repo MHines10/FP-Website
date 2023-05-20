@@ -11,7 +11,7 @@ export default function DeleteUser({ userId }) {
     event.preventDefault(); // Prevent the default form submission behavior
     try {
       // Send a DELETE request to the server to delete the user with the specified ID
-      const response = await axios.delete(`https://zcgapi.glitch.me/auth/users/${userId}`);
+      const response = await axios.delete(`https://responsible-knowledgeable-restaurant.glitch.me/auth/users/${userId}`);
       console.log(response.data); // Log the response data to the console
     } catch (error) {
       console.error(error); // Log any errors that occur during the request
