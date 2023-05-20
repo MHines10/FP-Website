@@ -78,9 +78,9 @@ export default function Login(props) {
             localStorage.setItem('tokenExp', expiration);
 
             // flash a success message and redirect back home
-            props.flashMessage('You have successfully logged in', 'success');
+            // props.flashMessage('You have successfully logged in', 'success');
             props.logUserIn();
-            navigate('/');
+            navigate('/home');
         } else {
             // flash a fail message
             props.flashMessage('Your username and/or password are incorrect', 'danger');

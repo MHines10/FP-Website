@@ -67,7 +67,7 @@ export default function Signup(props) {
                         props.flashMessage(data.error, "danger")
                     } else {
                         console.log(data)
-                        props.flashMessage(`${data.username} has been created`, 'success')
+                        // props.flashMessage(`${data.username} has been created`, 'success')
                         navigate('/login')
                     }
                 })
