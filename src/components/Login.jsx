@@ -19,7 +19,7 @@ export default function Login(props) {
     myHeaders.append("Content-Type", "application/json");
 
     let response = await fetch(
-        "https://zcgamingapi.glitch.me/api/token",
+        "http://localhost:5000/api/token",
       {
         method: "GET",
         headers: myHeaders,
