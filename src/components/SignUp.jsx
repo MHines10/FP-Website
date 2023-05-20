@@ -22,7 +22,7 @@ export default function Signup(props) {
         email: event.target.email.value,
         password,
       });
-      fetch("https://cobalt-quick-force.glitch.me/api/users", {
+      fetch("https://zcgamingapi.glitch.me/api/users", {
         method: "POST",
         headers: myHeaders,
         body: formData,
