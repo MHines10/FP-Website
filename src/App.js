@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Alerts from "./components/Alerts.jsx"
+import Alerts from "./components/Alerts"
 import CategoryPage from "./components/CategoryPage";
 import Login from "./components/Login";
 import Main from "./components/Main";
