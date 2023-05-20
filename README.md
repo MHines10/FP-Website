@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# ZeroCost Gaming
+ZeroCost Gaming is a web application that allows users to browse and search for free-to-play games and MMO games. It uses the MMO Games and Free-to-Play Games Database API to fetch game information and Flask to create a RESTful API that interacts with a SQLite database to store user information.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GitHub repo for Flask API & Database https://github.com/MHines10/ZeroCostGaming-Website-API-DB
 
-## Available Scripts
+# Technologies Used
+React
 
-In the project directory, you can run:
+Flask
 
-### `npm start`
+SQLite
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+MMO Games and Free-to-Play Games Database API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Features
+User can create an account
 
-### `npm test`
+User can login and logout
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+User can browse and search for free-to-play games and MMO games
 
-### `npm run build`
+User can add games to a list of favorites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+User can view their list of favorite games
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+User can remove games from their list of favorites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Getting Started
+To get started with this project, follow these steps:
 
-### `npm run eject`
+Clone the repository to your local machine using git clone https://github.com/your-username/ZeroCostGaming.git.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install the required dependencies for the React frontend by navigating to the client directory and running npm install.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install the required dependencies for the Flask backend by navigating to the server directory and running pip install -r requirements.txt.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create a .env file in the server directory with the following contents:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+makefile
 
-## Learn More
+Copy code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+FLASK_APP=app.py
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+FLASK_ENV=development
 
-### Analyzing the Bundle Size
+SECRET_KEY=your-secret-key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Replace your-secret-key with a secret key of your choice.
 
-### Deployment
+Initialize the SQLite database by running flask init-db in the server directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Start the Flask backend by running flask run in the server directory.
 
-### `npm run build` fails to minify
+Start the React frontend by running npm start in the client directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open your web browser and navigate to http://localhost:3000 to access the application.
+
+# API Documentation
+The API provides the following endpoints:
+
+GET /games: Returns a list of all games.
+
+GET /games/:id: Returns a single game by ID.
+
+POST /users: Creates a new user.
+
+GET /users/:id: Returns a single user by ID.
+
+PUT /users/:id: Updates a user's information.
+
+DELETE /users/:id: Deletes a user by ID.
+
+GET /favorites/:userId: Returns a user's list of favorite games.
+
+POST /favorites: Adds a game to a user's list of favorite games.
+
+DELETE /favorites/:userId/:gameId: Removes a game from a user's list of favorite games.
+
+# License
+This project is licensed under the MIT License. See the LICENSE file for details.
