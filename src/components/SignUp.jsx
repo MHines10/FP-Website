@@ -3,42 +3,76 @@ import "../styles/SignUp.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup(props) {
+  // const navigate = useNavigate();
+
+  // // Call flashMessage when needed
+  // props.flashMessage();
+
+  // const handleRegister = (event) => {
+  //   event.preventDefault();
+  //   let password = event.target.password.value;
+  //   let confirmPass = event.target.confirmPass.value;
+  //   if (password !== confirmPass) {
+  //     props.flashMessage("Passwords do not match", "danger");
+  //   } else {
+  //     let myHeaders = new Headers();
+  //     myHeaders.append("Content-Type", "application/json");
+  //     let formData = JSON.stringify({
+  //       username: event.target.username.value,
+  //       email: event.target.email.value,
+  //       password,
+  //     });
+  //     fetch("https://responsible-knowledgeable-restaurant.glitch.me/auth/users", {
+  //       method: "POST",
+  //       headers: myHeaders,
+  //       body: formData,
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.error) {
+  //           props.flashMessage(data.error, "danger");
+  //         } else {
+  //           console.log(data);
+  //           // props.flashMessage(`${data.username} has been created`, "success");
+  //           navigate("/login");
+  //         }
+  //       });
+  //   }
+  // };
+
+
   const navigate = useNavigate();
-
-  // Call flashMessage when needed
-  props.flashMessage();
-
-  const handleRegister = (event) => {
-    event.preventDefault();
-    let password = event.target.password.value;
-    let confirmPass = event.target.confirmPass.value;
-    if (password !== confirmPass) {
-      props.flashMessage("Passwords do not match", "danger");
-    } else {
-      let myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      let formData = JSON.stringify({
-        username: event.target.username.value,
-        email: event.target.email.value,
-        password,
-      });
-      fetch("https://responsible-knowledgeable-restaurant.glitch.me/auth/users", {
-        method: "POST",
-        headers: myHeaders,
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.error) {
-            props.flashMessage(data.error, "danger");
-          } else {
-            console.log(data);
-            // props.flashMessage(`${data.username} has been created`, "success");
-            navigate("/login");
-          }
-        });
+    const handleRegister = event => {
+        event.preventDefault();
+        let password = event.target.password.value;
+        let confirmPass = event.target.confirmPass.value;
+        if (password !== confirmPass){
+            props.flashMessage('Passwords do not match', 'danger');
+        } else {
+            let myHeaders = new Headers();
+            myHeaders.append('Content-Type', 'application/json');
+            let formData = JSON.stringify({
+                username: event.target.username.value,
+                email: event.target.email.value,
+                password
+            })
+            fetch("https://responsible-knowledgeable-restaurant.glitch.me/auth/users", {
+                method: 'POST',
+                headers: myHeaders,
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error){
+                        props.flashMessage(data.error, "danger")
+                    } else {
+                        console.log(data)
+                        props.flashMessage(`${data.username} has been created`, 'success')
+                        navigate('/login')
+                    }
+                })
+        }
     }
-  };
 
   return (
     <>
