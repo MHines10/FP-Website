@@ -19,7 +19,7 @@ export default function Login(props) {
     myHeaders.append("Content-Type", "application/json");
 
     let response = await fetch(
-        "http://localhost:5000/api/token",
+        "https://cobalt-quick-force.glitch.me/api/token",
       {
         method: "GET",
         headers: myHeaders,
