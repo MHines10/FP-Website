@@ -15,7 +15,7 @@ export default function UpdateUser({ userId }) {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+        const response = await axios.get(`https://zcgapi.glitch.me/auth/users/${userId}`);
         setUser(response.data);
         setUsername(response.data.username);
         setPassword(response.data.password);
@@ -30,7 +30,7 @@ export default function UpdateUser({ userId }) {
   const handleUpdate = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/api/users/${userId}`, {
+      const response = await axios.put(`https://zcgapi.glitch.me/auth/users/${userId}`, {
         username,
         password,
         email

@@ -22,7 +22,7 @@ export default function Signup(props) {
         email: event.target.email.value,
         password,
       });
-      fetch("https://zcgamingapi.glitch.me/api/users", {
+      fetch("https://zcgapi.glitch.me/auth/users", {
         method: "POST",
         headers: myHeaders,
         body: formData,
